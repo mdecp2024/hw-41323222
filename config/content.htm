@@ -57,15 +57,62 @@
 <p>2. 已知可以在網頁中利用 Brython 繪製方格與塗色, 如下連結, 請設法修改此一程式, 直接將程式存入個人的 Gist, 並利用黑色方塊圍出一個圓形區域.<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5705fc2a67aa1db0c0d44d6d0478b08b/raw/f95909804a1f134963cade8463eeb9bd32129ea8/grid_line_and_fill_in_Brython.py">網頁上的方格與塗色</a></p>
 <p>題目二答案:<a href="https://mdecp2024.github.io/hw-nfugithub22232/content/Brython.html?src=https://gist.githubusercontent.com/nfugithub22232/73e59e717a498e9496ffd472432ba96c/raw/bd15cef6e34ce6504a08ac361ed6b7054812a1e6/CRICLE.py">CRICLE</a></p>
 <p></p>
-<p>3. 完成上列題目後, 請利用 Youtube 影片<span>簡報</span>個人的解題過程與心得.</p><h1>HW 2</h1>
+<p>3. 完成上列題目後, 請利用 Youtube 影片<span>簡報</span>個人的解題過程與心得.</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
+<p><br/><br/><br/></p><h3>w12</h3>
+<p><a href="https://mdecp2024.github.io/hw-nfugithub22232/content/Brython.html?src=https://gist.githubusercontent.com/nfugithub22232/d95b533d5f412e9ed15f8d9679c289ff/raw/55ea8b62fcaa815688cb8bb670be8b99a8af4c2d/w12.py">01</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 11 # 總共的行數
+space = '_'
+center = n//2
+#print(center)
+
+for y in range(n):
+for x in range(n):
+print("(", x, ", ", y, ")", sep="")</pre>
+<p><br/><br/></p>
+<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/nfugithub22232/3f555abfed5b1acc7ef1b147c264cb39/raw/1763dba9ae29ce2bbb51eae4b436bdb67c989a1f/w12-2.py">灰格子</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width = 400, height = 400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 每一格的 pixel 數
+gs = 20
+
+# gs*tc = canvas width and height
+
+ctx = canvas.getContext("2d")
+
+width = 11
+height = 11
+
+'''
+ctx.lineWidth = 1
+ctx.strokeStyle = 'lightgrey'
+ctx.beginPath()
+#ctx.rect(i*gs, j*gs, gs, gs)
+ctx.rect(0, 0, 150, 100)
+ctx.stroke()
+'''
+for i in range(width):
+for j in range(height):
+#dRect(i*gs, j*gs, gs, gs, 1, "lightgrey")
+ctx.lineWidth = 1
+ctx.strokeStyle = 'lightgrey'
+ctx.beginPath();
+ctx.rect(i*gs, j*gs, gs, gs)
+ctx.stroke();</pre>
+<p><br/><br/></p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
 <p>延續 HW 1 網頁資料整理與程式練習方法, 整理下列內容 (20%):</p>
 <p>PART 2: Introduction to lists and if/else statements</p>
 <p>PART 3: Introduction to the for loop</p>
-<p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p>
-<h2>HW 2 Exam</h2>
+<p>完成上述流程整理後, 請將 HW2 自評分數輸入 cp2024 自評表單中.</p><h2>HW 2 Exam</h2>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h1>HW 3</h1>
