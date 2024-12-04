@@ -45,18 +45,89 @@
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/RjW3EY41tSU?si=hsQMR2TIwpqVEKAe" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/FWqZCDuaK_4?si=OTOuYTexy2BSWIFa" title="YouTube video player" width="560"></iframe></p>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/qVQogaNPBo4?si=Zl5fpL5eS2HysOxU" title="YouTube video player" width="560"></iframe></p>
-<h3>W9</h3>
+<h3>w9</h3>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/HUFZD6gV0sk?si=H6tei9L__A51xUXs" title="YouTube video player" width="560"></iframe></p>
-<p></p>
-<h3>w11</h3>
+<p></p><h3>w11_hw</h3>
 <p><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="allowfullscreen" frameborder="0" height="315" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube.com/embed/iAR4s6CfAoY?si=NcWSx4tm0y0SD93g" title="YouTube video player" width="560"></iframe></p>
 <p>1.  已知可以用 Python 程式<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5e6eda7a004c15fa7262b9a80bfa4af6/raw/c2225ac22f32ee8485a630b42cf3f4d8567bb661/up_to_down_pyramid.py">由上往下列印三角形 *</a>, 或<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5e6eda7a004c15fa7262b9a80bfa4af6/raw/56793c72d4495d564e3cc6214ed5fb68dbd2b21d/left_to_right_pyramid.py">由左往右列印三角形 *</a>, 請將此程式延伸到可以在 10x10 的字元區域中, 以 "*" 字元列印出圓型區域. 完成後請將程式碼存入個人 Gist 後, 直接在個人作業網站中的 Brython 頁面中執行. (提示: ?src=gist_script_URL)</p>
 <p>題目一答案:<a href="https://mdecp2024.github.io/hw-nfugithub22232/content/Brython.html?src=https://gist.githubusercontent.com/nfugithub22232/93b74bd520033a9a5812579ec86bf7ae/raw/93fc0655634560a8c8e1efa632eab9bb552e8420/cricle.py">circle</a></p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def draw_filled_circle():
+    size = 10
+    center_x = 5
+    center_y = 5
+    radius = 4
+    for y in range(size):
+        for x in range(size):
+            # 計算點(x, y)到圓心的距離的平方
+            distance_squared = (x - center_x)**2 + (y - center_y)**2
+            # 如果距離平方小於或等於半徑平方，則該點在圓內或圓上
+            if distance_squared &lt;= radius**2:
+                print("*", end="")
+            else:
+                print(" ", end="")
+        print()  # 換行
+
+draw_filled_circle()</pre>
+<p><br/><br/></p>
 <p></p>
 <p>2. 已知可以在網頁中利用 Brython 繪製方格與塗色, 如下連結, 請設法修改此一程式, 直接將程式存入個人的 Gist, 並利用黑色方塊圍出一個圓形區域.<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5705fc2a67aa1db0c0d44d6d0478b08b/raw/f95909804a1f134963cade8463eeb9bd32129ea8/grid_line_and_fill_in_Brython.py">網頁上的方格與塗色</a></p>
 <p>題目二答案:<a href="https://mdecp2024.github.io/hw-nfugithub22232/content/Brython.html?src=https://gist.githubusercontent.com/nfugithub22232/73e59e717a498e9496ffd472432ba96c/raw/bd15cef6e34ce6504a08ac361ed6b7054812a1e6/CRICLE.py">CRICLE</a></p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 html 建立畫布超檔案物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 每格的像素數
+gs = 40  # 每格的像素數
+
+# 取得畫布的上下文
+ctx = canvas.getContext("2d")
+
+# 繪製矩形
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+
+# 繪製網格
+def grid(width, height, grid_pix):
+    for i in range(width):
+        for j in range(height):
+            dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+
+# 填充顏色
+def fill(x, y, color):
+    ctx.fillStyle = color
+    ctx.fillRect(x * gs, y * gs, gs, gs)
+
+# 繪製圓形，判斷每個格子是否在圓形內
+def draw_circle():
+    center_x = 5  # 圓心 x
+    center_y = 5  # 圓心 y
+    radius = 4  # 圓的半徑
+
+    # 繪製圓形
+    for i in range(10):
+        for j in range(10):
+            # 計算每個格子的中心點
+            cx = i + 0.5  # 格子中心的 x
+            cy = j + 0.5  # 格子中心的 y
+            distance_squared = (cx - center_x)**2 + (cy - center_y)**2
+            
+            # 如果這個格子在圓形內部或圓上
+            if distance_squared &lt;= radius**2:
+                fill(i, j, "black")  # 填充顏色為黑色
+
+# 繪製網格與圓形
+grid(10, 10, gs)
+draw_circle()
+</pre>
+<p><br/><br/></p>
 <p>3. 完成上列題目後, 請利用 Youtube 影片<span>簡報</span>個人的解題過程與心得.</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
 <p><br/><br/><br/></p><h3>w12</h3>
