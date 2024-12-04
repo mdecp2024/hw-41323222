@@ -71,8 +71,63 @@ draw_filled_circle()</pre>
 <p><br/><br/></p>
 <p></p>
 <p>2. 已知可以在網頁中利用 Brython 繪製方格與塗色, 如下連結, 請設法修改此一程式, 直接將程式存入個人的 Gist, 並利用黑色方塊圍出一個圓形區域.<a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/mdecycu/5705fc2a67aa1db0c0d44d6d0478b08b/raw/f95909804a1f134963cade8463eeb9bd32129ea8/grid_line_and_fill_in_Brython.py">網頁上的方格與塗色</a></p>
-<p>題目二答案:<a href="https://mdecp2024.github.io/hw-nfugithub22232/content/Brython.html?src=https://gist.githubusercontent.com/nfugithub22232/73e59e717a498e9496ffd472432ba96c/raw/bd15cef6e34ce6504a08ac361ed6b7054812a1e6/CRICLE.py">CRICLE</a></p>
-<p></p>
+<p>題目二答案:CIRCLE</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 html 建立畫布超檔案物件
+canvas = html.CANVAS(width=400, height=400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 每格的像素數
+gs = 40  # 每格的像素數
+
+# 取得畫布的上下文
+ctx = canvas.getContext("2d")
+
+# 繪製矩形
+def dRect(lux, luy, w, h, s=1, c='#ff0000'):
+    ctx.lineWidth = s
+    ctx.strokeStyle = c
+    ctx.beginPath()
+    ctx.rect(lux, luy, w, h)
+    ctx.stroke()
+
+# 繪製網格
+def grid(width, height, grid_pix):
+    for i in range(width):
+        for j in range(height):
+            dRect(i * grid_pix, j * grid_pix, grid_pix, grid_pix, 1, "lightgrey")
+
+# 填充顏色
+def fill(x, y, color):
+    ctx.fillStyle = color
+    ctx.fillRect(x * gs, y * gs, gs, gs)
+
+# 繪製圓形，判斷每個格子是否在圓形內
+def draw_circle():
+    center_x = 5  # 圓心 x
+    center_y = 5  # 圓心 y
+    radius = 4  # 圓的半徑
+
+    # 繪製圓形
+    for i in range(10):
+        for j in range(10):
+            # 計算每個格子的中心點
+            cx = i + 0.5  # 格子中心的 x
+            cy = j + 0.5  # 格子中心的 y
+            distance_squared = (cx - center_x)**2 + (cy - center_y)**2
+            
+            # 如果這個格子在圓形內部或圓上
+            if distance_squared &lt;= radius**2:
+                fill(i, j, "black")  # 填充顏色為黑色
+
+# 繪製網格與圓形
+grid(10, 10, gs)
+draw_circle()
+</pre>
+<p><br/><br/></p>
 <p>3. 完成上列題目後, 請利用 Youtube 影片<span>簡報</span>個人的解題過程與心得.</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
 <p><br/><br/><br/></p><h3>w12</h3>
