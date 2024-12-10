@@ -132,10 +132,9 @@ draw_circle()
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
 <p><br/><br/><br/></p>
 <h3>w12_wh</h3>
-<p><strong>第一題</strong> _Text, questions, and art Strings, input(), and print()</p>
+<p><strong>第一題</strong> _Text, questions, and art - <em>Strings, input(), and print()</em> -</p>
 <p>1-1 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/de2a4853d95212faaf29b339a2763b369343dccb/w12_1-1.py">answer</a></p>
 <p>解釋 : <span style="color: #ff0000;"><code>input()</code></span><span> </span>就是讓程式能問你問題並得到你的答案</p>
-<div></div>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">name = input("__name__：")
 print("nice to meet you " + name)</pre>
 <p><br/>1-2 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/de2a4853d95212faaf29b339a2763b369343dccb/w12_1-2.py">answer</a></p>
@@ -145,15 +144,81 @@ print (" &gt;^.^&lt;   ")
 print ("  / \    ")
 print (" (___)___")</pre>
 <p></p>
-<p><strong>第二題</strong> _Events and favorites Variables and string concatenation</p>
-<p>2 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/0daac297ee2be61d2027a26cc1baf55067f2a217/w12_2.py">answer</a></p>
+<p><strong>第二題</strong> _Events and favorites - <em>Variables and string concatenation</em> -</p>
+<p>2-1 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/0daac297ee2be61d2027a26cc1baf55067f2a217/w12_2.py">answer</a></p>
 <p>解釋 : <span>前兩句是寫出變數，後兩句是列印變數</span></p>
+<p></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">first_name = "dududududu"
 last_name  = "Max Verstappen"
 print (first_name)
 print (last_name)</pre>
-<p>第三題_<br/><br/></p>
-<p><br/><br/><br/></p><h1>HW 2</h1>
+<p>2-2 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/a70b2d06c349cf9e04decbb5b75cf7b7da0be87b/w12_2-2.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">name = input("What's your name?")
+favorite_food = input ("What is your favorite food?")
+print ("Hi! My name is " + name)
+print ("My favorite food is " + favorite_food) 
+print (name + "'s favorite food is " + favorite_food)</pre>
+<p></p>
+<p><strong>第三題 </strong>_ In a bookstore - <em>Lists and if... in... / else...</em> -</p>
+<p>3 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/64fcb626a8a207742329c63370e35499951072f4/w12_3.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">programming_books = ["Learn python", "Python for all",  "Intro to python"]
+print (programming_books)
+wanted_book = input("Hi! What book would you like to buy?")
+print (wanted_book)
+if wanted_book in programming_books:
+    print ("Yes, we sell it!")
+else:
+    print ("Sorry, we don't sell that book")</pre>
+<p><strong>第四題</strong> _ Grocery shopping -<em> List methods: .append() and .remove()</em> -</p>
+<p>4 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/b1b13dafa1655aa65a83538ac32002f1d191d137/w12_4.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">shopping_list = ["carrots", "chocolate", "olives"]
+print (shopping_list)
+new_item = input("What else do I have to buy?")
+ 
+if new_item in shopping_list:
+    print (new_item + " is/are already in the shopping list")
+    print (shopping_list) 
+else:
+    shopping_list.append(new_item)
+    print (shopping_list)
+    item_to_remove = input("What do I have to remove?")
+ 
+if item_to_remove in shopping_list:
+    shopping_list.remove(item_to_remove)
+    print (shopping_list)
+else:
+    print (item_to_remove + " is/are not in the list")
+    print (shopping_list)</pre>
+<p><strong>第五題</strong> _ Customizing the burger menu -<em> List methods: .index(), .pop(), and .insert()</em> -</p>
+<p>5 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/af4da37b8ca4dab494184b68787b5ade7f191b5b/w12_5.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">todays_menu = ["burger", "salad", "coke"]
+print(todays_menu)
+side_dish_index = todays_menu.index("salad")
+print (side_dish_index)
+todays_menu.pop(side_dish_index)
+print (todays_menu)
+todays_menu.insert(side_dish_index, "fries")
+print (todays_menu)</pre>
+<p><strong>第六題</strong> _ Traveling around the world - <em>List slicing</em> -</p>
+<p>6 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/60589f64b4bb39fb755927a5510f17415fdbe08b/w12_6.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">cities = ["San Diego", "Prague", "Cape Town", "Tokyo", "Melbourne"]
+print (cities)
+print (cities[1])
+print (cities[1:4])
+print (cities[1:4:2])
+print (cities[0:3])
+print (cities[:3])
+print (cities[2:5])
+print (cities[2:])
+print (cities[0:5:2])
+print (cities[::2])
+print (cities[4])
+print (cities[-1])
+print (cities[-4:-1])
+cities[3:0:-1]
+cities[-2:-5:-1]
+print (cities[::-1])</pre>
+<p></p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
 <hr/>
