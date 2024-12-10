@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='References.html'>References</a></li></ul><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w10.html'>w10</a><li><a href='w9.html'>w9</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12.html'>w12</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li><a href='HW 2 Exam.html'>HW 2 Exam</a></li></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li class='has-children'><a href='HW 3 Exam.html'>HW 3 Exam</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='W8.html'>W8</a></li></li></ul></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='References.html'>References</a></li></ul><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w10.html'>w10</a><li><a href='w9.html'>w9</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_wh.html'>w12_wh</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w13.html'>w13</a></li></li></ul></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li class='has-children'><a href='HW 3 Exam.html'>HW 3 Exam</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='W8.html'>W8</a></li></li></ul></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,53 +141,16 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w11_hw << <a href='w11_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w12</h1>
-<p><a href="https://mdecp2024.github.io/hw-nfugithub22232/content/Brython.html?src=https://gist.githubusercontent.com/nfugithub22232/d95b533d5f412e9ed15f8d9679c289ff/raw/55ea8b62fcaa815688cb8bb670be8b99a8af4c2d/w12.py">01</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">n = 11 # 總共的行數
-space = '_'
-center = n//2
-#print(center)
-
-for y in range(n):
-for x in range(n):
-print("(", x, ", ", y, ")", sep="")</pre>
+    <div id="tipue_search_content">w11_hw << <a href='w11_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w12_wh</h1>
+<p>第一題  Text, questions, and art Strings, input(), and print()</p>
+<p>1-1 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/de2a4853d95212faaf29b339a2763b369343dccb/w12_1-1.py">answer</a></p>
+<p>解釋 : <code>input()</code><span> </span>就是讓程式能問你問題並得到你的答案</p>
+<div></div>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">name = input("__name__：")
+print("nice to meet you " + name)</pre>
 <p><br/><br/></p>
-<p><a href="https://mde.tw/cp2024/content/Brython.html?src=https://gist.githubusercontent.com/nfugithub22232/3f555abfed5b1acc7ef1b147c264cb39/raw/1763dba9ae29ce2bbb51eae4b436bdb67c989a1f/w12-2.py">灰格子</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
-from browser import document as doc
-
-# 利用 html 建立 canvas 超文件物件
-canvas = html.CANVAS(width = 400, height = 400)
-brython_div = doc["brython_div1"]
-brython_div &lt;= canvas
-
-# 每一格的 pixel 數
-gs = 20
-
-# gs*tc = canvas width and height
-
-ctx = canvas.getContext("2d")
-
-width = 11
-height = 11
-
-'''
-ctx.lineWidth = 1
-ctx.strokeStyle = 'lightgrey'
-ctx.beginPath()
-#ctx.rect(i*gs, j*gs, gs, gs)
-ctx.rect(0, 0, 150, 100)
-ctx.stroke()
-'''
-for i in range(width):
-for j in range(height):
-#dRect(i*gs, j*gs, gs, gs, 1, "lightgrey")
-ctx.lineWidth = 1
-ctx.strokeStyle = 'lightgrey'
-ctx.beginPath();
-ctx.rect(i*gs, j*gs, gs, gs)
-ctx.stroke();</pre>
-<p><br/><br/></p><br />w11_hw << <a href='w11_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
+<p></p>
+<p><br/><br/><br/></p><br />w11_hw << <a href='w11_hw.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
