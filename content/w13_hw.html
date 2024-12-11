@@ -130,7 +130,7 @@ img.add_border {
                             <li><a href="./../blog/index.html">blog</a></li>
                         </ul>
                       </li>
-                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='References.html'>References</a></li></ul><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w10.html'>w10</a><li><a href='w9.html'>w9</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_wh.html'>w12_wh</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li class='has-children'><a href='HW 2 Exam.html'>HW 2 Exam</a><ul class='dropdown'><li><a href='w13.html'>w13</a></li></li></ul></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li class='has-children'><a href='HW 3 Exam.html'>HW 3 Exam</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='W8.html'>W8</a></li></li></ul></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
+                     <li class='has-children'><a href='About.html'>About</a><ul class='dropdown'><li><a href='References.html'>References</a></li></ul><li><a href='Attendance.html'>Attendance</a><li class='has-children'><a href='HW 1.html'>HW 1</a><ul class='dropdown'><li class='has-children'><a href='HW 1 Exam.html'>HW 1 Exam</a><ul class='dropdown'><li><a href='w10.html'>w10</a><li><a href='w9.html'>w9</a><li><a href='w11_hw.html'>w11_hw</a><li><a href='w12_wh.html'>w12_wh</a><li><a href='w13_hw.html'>w13_hw</a></li></li></ul></ul><li class='has-children'><a href='HW 2.html'>HW 2</a><ul class='dropdown'><li><a href='HW 2 Exam.html'>HW 2 Exam</a></li></ul><li class='has-children'><a href='HW 3.html'>HW 3</a><ul class='dropdown'><li class='has-children'><a href='HW 3 Exam.html'>HW 3 Exam</a><ul class='dropdown'><li><a href='W7.html'>W7</a><li><a href='W8.html'>W8</a></li></li></ul></ul><li class='has-children'><a href='HW 4.html'>HW 4</a><ul class='dropdown'><li><a href='HW 4 Exam.html'>HW 4 Exam</a></li></ul><li><a href='Final Report.html'>Final Report</a><li><a href='Brython.html'>Brython</a></li>
                       </ul>
                 </nav>
               </div>
@@ -141,8 +141,46 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3<br /><h1>w13</h1>
-<br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='HW 3.html'>Next</a> >> HW 3</div>
+    <div id="tipue_search_content">w12_wh << <a href='w12_wh.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2<br /><h1>w13_hw</h1>
+<p>1.<a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/32d70555de133b4413b93c15a7f9c27d2eefe4b1/w13-1">交疊雙框</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+
+# 利用 html 建立 canvas 超文件物件
+canvas = html.CANVAS(width = 400, height = 400)
+brython_div = doc["brython_div1"]
+brython_div &lt;= canvas
+
+# 每一格的 pixel 數
+gs = 200
+
+# gs*tc = canvas width and height
+
+ctx = canvas.getContext("2d")
+
+width = 1
+height = 1
+
+for i in range(width):
+    for j in range(height):
+        #dRect(i*gs,j*gs,gs,gs,1,"lightgrey")
+        ctx.lineWidth = 1
+        ctx.strokeStyle = '#ff0000'
+        ctx.beginPath();
+        ctx.rect(i*gs,j*gs,gs,gs)
+        ctx.stroke();
+
+offset_x = 100
+offset_y = 100
+
+for i in range(width):
+    for j in range(height):
+        ctx.lineWidth = 1
+        ctx.strokeStyle = '#ff0000'
+        ctx.beginPath()
+        ctx.rect(i * gs + offset_x, j * gs + offset_y, gs, gs)
+        ctx.stroke()</pre>
+<p><img alt="" height="400" src="./../images/交疊雙框.png" width="400"/></p><br />w12_wh << <a href='w12_wh.html'>Previous</a> <a href='HW 2.html'>Next</a> >> HW 2</div>
         
     <!-- footer -->
       <div class="container">
