@@ -134,11 +134,11 @@ draw_circle()
 <h3>w12_wh</h3>
 <p><strong>第一題</strong> _Text, questions, and art - <em>Strings, input(), and print()</em> -</p>
 <p>1-1 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/de2a4853d95212faaf29b339a2763b369343dccb/w12_1-1.py">answer</a></p>
-<p>解釋 : <span style="color: #ff0000;"><code>input()</code></span><span> </span>就是讓程式能問你問題並得到你的答案</p>
+<p>解釋 : <span style="color: #000000;"><code>input()</code></span><span> </span>就是讓程式能問你問題並得到你的答案</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">name = input("__name__：")
 print("nice to meet you " + name)</pre>
-<p><br/>1-2 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/de2a4853d95212faaf29b339a2763b369343dccb/w12_1-2.py">answer</a></p>
-<p>解釋 :<span style="color: #ff00ff;"> <span style="color: #ff0000;"><code>print()</code></span></span><span><span style="color: #ff0000;"> </span>就是讓程式將文字或數據顯示出來，讓你知道程式正在做什麼或顯示結果</span></p>
+<p>1-2 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/de2a4853d95212faaf29b339a2763b369343dccb/w12_1-2.py">answer</a></p>
+<p>解釋 :<span style="color: #ff00ff; background-color: #ffffff;"> <span style="color: #000000;"><code>print()</code></span></span><span><span style="color: #ff0000; background-color: #ffffff;"> </span>就是讓程式將文字或數據顯示出來，讓你知道程式正在做什麼或顯示結果</span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print (" /\_/\   ")
 print (" &gt;^.^&lt;   ")
 print ("  / \    ")
@@ -218,6 +218,115 @@ print (cities[-4:-1])
 cities[3:0:-1]
 cities[-2:-5:-1]
 print (cities[::-1])</pre>
+<p><strong>第七題</strong> _ Senses, planets, and a house - <em>Changing, adding, and removing list elements using slicing</em> -</p>
+<p>7-1 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/f6baca8cbe729507faa3a1a4edb1c7ba15551bb2/w12_7-1.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">senses = ["eyes", "nose", "ears", "tongue", "skin"]
+print (senses)
+senses[1] = "smell"
+print (senses)
+senses[3:5] = ["taste", "touch"]
+print (senses)
+senses[0:3:2] = ["sight", "hearing"]
+print (senses)</pre>
+<p>7-2 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/f6baca8cbe729507faa3a1a4edb1c7ba15551bb2/w12_7-2.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">planets = ["Mercury", "Mars", "Earth", "Neptune"]
+print (planets)
+planets = planets + ["Jupiter"]
+print (planets)
+planets = planets[0:2] + ["Venus"] + planets[2:5]
+print (planets)
+planets = planets[:5] + ["Uranus", "Saturn"] + planets[5:]
+print(planets)</pre>
+<p>7-3 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/f6baca8cbe729507faa3a1a4edb1c7ba15551bb2/w12_7-3.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">house = ["kitchen", "dining room", "living room", "bedroom", "bathoom", "garden", "balcony", "terrace"]
+print (house)
+del house[1]
+print (house)
+del house[4:6]
+print (house)
+del house[::2]
+print (house)
+del house
+print (house)</pre>
+<p><strong>第八題</strong> _ My friends' favorite dishes - <em>for ... in range()</em> -</p>
+<p>8 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/5a7e7a6692e796c629d4f757137488a67d0166da/w12_8.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">friends = ["Geetha", "Luca", "Daisy", "Juhan"]  
+ 
+dishes  = ["sushi", "burgers", "tacos", "pizza"]  
+ 
+print("My friends' names are:")  
+print(friends)  
+ 
+for index in range(0, 4):  
+    print("index:  " + str(index))  
+    print("friend: " + friends[index])  
+ 
+print("Their favorite dishes are:")  
+print(dishes)  
+ 
+for index in range(0, 4):  
+    print("index:  " + str(index))  
+    print("dish: " + dishes[index])  
+ 
+for index in range(0, 4):  
+    print("My friend " + friends[index] + "'s favorite dish is " + dishes[index])</pre>
+<p><strong>第九題</strong> _ At the zoo - <em>For loop with if... == ... / else -</em></p>
+<p>9 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/c4eab48b2a2865208c354f0da143bb62ad06bec8/w12_9.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">animals = ["giraffe", "penguin", "dolphin"]
+print (animals)
+# for each position in the list
+for i in range (0, len(animals)):
+    print ("-- Beginning of loop --")
+    # print each element and its position
+    print ("The element in position " + str(i) + " is " + animals[i])
+    wanted_to_see = "penguin"
+    # for each position in the list
+for i in range (0, len(animals)):
+    # if the current animal is what you really wanted to see
+    if animals[i] == wanted_to_see:
+        # print out that that's the animal you really wanted to see
+        print ("I saw a " + animals[i] + " and I really wanted to see it!")
+    # if the current animal is not what you really wanted to see
+    else:
+        # just print out that you saw it
+        print ("I saw a " + animals[i])</pre>
+<p><strong>第十題</strong> _ Where are my gloves? - <em>For loop for searching</em> -</p>
+<p>10 : <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/1ef86b1d5b88fd02af6a7e203dd3556c6bdcb571/w12_10.py">answer</a></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">accessories = ["belt", "hat", "gloves", "sunglasses", "ring"]
+print(accessories)
+ 
+for i in range(len(accessories)):
+    print(f"The element {accessories[i]} is in position {i}")
+ 
+for i in range(len(accessories)):
+    if len(accessories[i]) == 6:
+        print(f"The element {accessories[i]} is in position {i} and it has 6 characters")
+ 
+for i in range(len(accessories)):
+    if len(accessories[i]) &lt; 6:
+        print(f"The element {accessories[i]} is in position {i} and it has less than 6 characters")
+ 
+n_of_characters = 6
+for i in range(len(accessories)):
+    if len(accessories[i]) &gt; n_of_characters:
+        print(f"The element {accessories[i]} is in position {i} and it has more than {n_of_characters} characters")
+ 
+for i in range(len(accessories)):
+    if len(accessories[i]) != n_of_characters:
+        print(f"The element {accessories[i]} is in position {i} and it has a number of characters different from {n_of_characters}")
+ 
+position = 2
+for i in range(len(accessories)):
+    if i &lt;= position:
+        print(f"The element {accessories[i]} is in position {i}, which is less than or equal to {position}")
+ 
+for i in range(len(accessories)):
+    if i &gt;= position:
+        print(f"The element {accessories[i]} is in position {i}, which is at least {position}")</pre>
+<p>心得 :</p>
+<p></p>
+<p></p>
+<p></p>
 <p></p><h1>HW 2</h1>
 <h4>主題: Python 的數列、判斷式與重複迴圈 (20%)<span style="background-color: #ffff99;"><br/></span></h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 2 and Part 3</p>
