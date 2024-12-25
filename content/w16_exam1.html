@@ -141,184 +141,90 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">w12_hw << <a href='w12_hw.html'>Previous</a> <a href='w14_hw.html'>Next</a> >> w14_hw<br /><h1>w13_hw</h1>
-<p>1.<a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/32d70555de133b4413b93c15a7f9c27d2eefe4b1/w13-1">交疊雙框</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
-from browser import document as doc
+    <div id="tipue_search_content">HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='w16_exam2.html'>Next</a> >> w16_exam2<br /><h1>w16_exam1</h1>
+<p><span>題目: 請以</span><span>自己的學號最後四碼</span><span>作為繪圖的座標原點, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖座標原點), 並以 pixel=2 的黑色直線分別利用 Brython 繪圖, 標示出向右為正的 X 軸, 以及向下為正的 Y 軸, 並且利用文字標示出原點座標 (例如: (39, 32)), 之後請自選最左側圖形的起始點座標, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像                                        (32,22)</span></p>
+<p><span>                                              <img alt="" height="114" src="./../images/w16_1.jpg" width="200"/></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html
+import math
 
-# 利用 html 建立 canvas 超文件物件
-canvas = html.CANVAS(width = 400, height = 400)
-brython_div = doc["brython_div1"]
-brython_div &lt;= canvas
+# 初始化 HTML 畫布
+def setup_canvas():
+    if not document.querySelector("#my_canvas"):
+        document &lt;= html.CANVAS(id="my_canvas", width=1200, height=900)
 
-# 每一格的 pixel 數
-gs = 200
-
-# gs*tc = canvas width and height
-
+setup_canvas()
+canvas = document["my_canvas"]
 ctx = canvas.getContext("2d")
 
-width = 1
-height = 1
+# 原點座標
+origin_x, origin_y = 32, 22
 
-for i in range(width):
-    for j in range(height):
-        #dRect(i*gs,j*gs,gs,gs,1,"lightgrey")
-        ctx.lineWidth = 1
-        ctx.strokeStyle = '#ff0000'
-        ctx.beginPath();
-        ctx.rect(i*gs,j*gs,gs,gs)
-        ctx.stroke();
-
-offset_x = 100
-offset_y = 100
-
-for i in range(width):
-    for j in range(height):
-        ctx.lineWidth = 1
-        ctx.strokeStyle = '#ff0000'
-        ctx.beginPath()
-        ctx.rect(i * gs + offset_x, j * gs + offset_y, gs, gs)
-        ctx.stroke()</pre>
-<p><img alt="" height="400" src="./../images/交疊雙框.png" width="400"/></p>
-<p>2.<a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/91d55e963443c992f996a4f954a50c66c9a0e0cd/w13-2.py">外加兩外切圓</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
-from browser import document as doc
-
-# 建立 canvas 元素
-canvas = html.CANVAS(width=500, height=500)
-brython_div = doc["brython_div1"]
-brython_div &lt;= canvas
-
-# 定義圓心和半徑
-x1, y1 = 200, 200  # 第一個圓的圓心
-x2, y2 = 300, 300  # 第二個圓的圓心
-radius = 141.4  # 圓的半徑
-
-ctx = canvas.getContext("2d")
-
-# === 繪製第一個圓 ===
+# 繪製 X 和 Y 軸
 ctx.beginPath()
-ctx.arc(x1, y1, radius, 0, 2 * 3.14159)
-ctx.lineWidth = 2
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(750, origin_y)
+ctx.moveTo(origin_x, origin_y)
+ctx.lineTo(origin_x, 450)
 ctx.strokeStyle = "black"
-ctx.stroke()
-
-# === 繪製第二個圓 ===
-ctx.beginPath()
-ctx.arc(x2, y2, radius, 0, 2 * 3.14159)
 ctx.lineWidth = 2
-ctx.strokeStyle = "black"
 ctx.stroke()
 
-# === 繪製正方形框架 ===
-# 第一個正方形
-ctx.lineWidth = 2
-ctx.strokeStyle = "red"
-ctx.beginPath()
-ctx.rect(100, 100, 200, 200)
-ctx.stroke()
+# 標記原點
+ctx.font = "18px Arial"
+ctx.fillStyle = "black"
+ctx.fillText("(32, 22)", origin_x + 7, origin_y - 7)
 
-# 第二個正方形
-ctx.beginPath()
-ctx.rect(200, 200, 200, 200)
-ctx.stroke()</pre>
-<p><img alt="" height="500" src="./../images/外切圓.png" width="500"/></p>
-<p>3.<a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/e0d5bb3171af918a11d7060a16f675b89c9c5714/w13-3.py">圖形上色</a></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
-from browser import document as doc
+# 繪製圖形
+def draw_hexagon(x, y, size, color):
+    ctx.beginPath()
+    for i in range(6):
+        angle = i * (2 * math.pi / 6)
+        ctx.lineTo(x + size * math.cos(angle), y + size * math.sin(angle))
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
 
-# 建立 canvas 元素
-canvas = html.CANVAS(width=500, height=500)
-brython_div = doc["brython_div1"]
-brython_div &lt;= canvas
+def draw_diamond(x, y, width, height, color):
+    ctx.beginPath()
+    ctx.moveTo(x, y - height // 2)
+    ctx.lineTo(x + width // 2, y)
+    ctx.lineTo(x, y + height // 2)
+    ctx.lineTo(x - width // 2, y)
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
 
-# 定義圓心和半徑
-x1, y1 = 200, 200  # 第一個圓的圓心
-x2, y2 = 300, 300  # 第二個圓的圓心
-radius = 141.4  # 外切圓半徑
+def draw_triangle(x1, y1, x2, y2, x3, y3, color):
+    ctx.beginPath()
+    ctx.moveTo(x1, y1)
+    ctx.lineTo(x2, y2)
+    ctx.lineTo(x3, y3)
+    ctx.closePath()
+    ctx.fillStyle = color
+    ctx.fill()
 
-ctx = canvas.getContext("2d")
+def draw_circle(x, y, radius, color):
+    ctx.beginPath()
+    ctx.arc(x, y, radius, 0, 2 * math.pi)
+    ctx.fillStyle = color
+    ctx.fill()
 
-# === 填充兩個圓的內容 ===
-# 第一個圓填充黃色
-ctx.beginPath()
-ctx.arc(x1, y1, radius, 0, 2 * 3.14159)
-ctx.fillStyle = "mistyrose"
-ctx.fill()
+def draw_rectangle(x, y, width, height, color):
+    ctx.beginPath()
+    ctx.rect(x, y, width, height)
+    ctx.fillStyle = color
+    ctx.fill()
 
-# 第二個圓填充淺藍色
-ctx.beginPath()
-ctx.arc(x2, y2, radius, 0, 2 * 3.14159)
-ctx.fillStyle = "lightblue"
-ctx.fill()
-
-# 填充方形交疊區域
-ctx.beginPath()
-ctx.rect(200, 200, 100, 100)
-ctx.fillStyle = "orange"
-ctx.fill()
-
-# 填充第一個方形其他部分
-ctx.beginPath()
-ctx.rect(100, 100, 100, 100)
-ctx.fillStyle = "blue"
-ctx.fill()
-
-ctx.beginPath()
-ctx.rect(100, 200, 100, 100)
-ctx.fillStyle = "darkblue"
-ctx.fill()
-
-ctx.beginPath()
-ctx.rect(200, 100, 100, 100)
-ctx.fillStyle = "aqua"
-ctx.fill()
-
-# 填充第二個方形其他部分
-ctx.beginPath()
-ctx.rect(300, 200, 100, 100)
-ctx.fillStyle = "coral"
-ctx.fill()
-
-ctx.beginPath()
-ctx.rect(200, 300, 100, 100)
-ctx.fillStyle = "red"
-ctx.fill()
-
-ctx.beginPath()
-ctx.rect(300, 300, 100, 100)
-ctx.fillStyle = "darkorchid"
-ctx.fill()
-
-# === 繪製外切圓與紅色方框邊框 ===
-
-# 繪製第一個外切圓
-ctx.lineWidth = 2
-ctx.strokeStyle = "black"
-ctx.beginPath()
-ctx.arc(x1, y1, radius, 0, 2 * 3.14159)
-ctx.stroke()
-
-# 繪製第二個外切圓
-ctx.beginPath()
-ctx.arc(x2, y2, radius, 0, 2 * 3.14159)
-ctx.stroke()
-
-# 繪製紅色方框邊框
-ctx.strokeStyle = "white"
-
-# 第一個紅色方形
-ctx.beginPath()
-ctx.rect(100, 100, 200, 200)
-ctx.stroke()
-
-# 第二個紅色方形
-ctx.beginPath()
-ctx.rect(200, 200, 200, 200)
-ctx.stroke()</pre>
-<p><img alt="" height="500" src="./../images/上色2.0.png" width="500"/><br/><br/></p>
-<br />w12_hw << <a href='w12_hw.html'>Previous</a> <a href='w14_hw.html'>Next</a> >> w14_hw</div>
+# 調用圖形繪製函數
+draw_hexagon(150, 150, 45, "orange")
+draw_diamond(240, 150, 60, 90, "teal")
+draw_triangle(247, 195, 307, 195, 277, 150, "Aqua")
+draw_circle(345, 150, 45, "red")
+draw_rectangle(398, 113, 75, 75, "gold")
+draw_rectangle(480, 135, 90, 30, "Indigo")
+</pre>
+<p></p>
+<br />HW 2 Exam << <a href='HW 2 Exam.html'>Previous</a> <a href='w16_exam2.html'>Next</a> >> w16_exam2</div>
         
     <!-- footer -->
       <div class="container">
