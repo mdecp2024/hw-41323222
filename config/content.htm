@@ -528,7 +528,7 @@ ctx.stroke()</pre>
 <p>每六人為一組進行協同程式練習</p>
 <p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 2 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>w16_exam1</h3>
-<p><span>題目: 請以</span><span>自己的學號最後四碼</span><span>作為繪圖的座標原點, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖座標原點), 並以 pixel=2 的黑色直線分別利用 Brython 繪圖, 標示出向右為正的 X 軸, 以及向下為正的 Y 軸, 並且利用文字標示出原點座標 (例如: (39, 32)), 之後請自選最左側圖形的起始點座標, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像                                        (32,22)</span></p>
+<p><span>題目: 請以</span><span>自己的學號最後四碼</span><span>作為繪圖的座標原點, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖座標原點), 並以 pixel=2 的黑色直線分別利用 Brython 繪圖, 標示出向右為正的 X 軸, 以及向下為正的 Y 軸, 並且利用文字標示出原點座標 (例如: (39, 32)), 之後請自選最左側圖形的起始點座標, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像   <strong>-</strong> <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/252c0ab8841aa2c4baa1ff634ce448c7b355ddac/w16-1.py">answer_1</a> <strong>-</strong>                                    </span></p>
 <p><span>                                              <img alt="" height="114" src="/images/w16_1.jpg" width="200"/></span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import document, html
 import math
@@ -609,11 +609,265 @@ draw_circle(345, 150, 45, "red")
 draw_rectangle(398, 113, 75, 75, "gold")
 draw_rectangle(480, 135, 90, 30, "Indigo")
 </pre>
-<p></p>
-<h3>w16_exam2</h3>
-<p><span>題目: 請以</span><span>自己的學號最後四碼</span><span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用 </span><span>pixel=2 的藍色直線</span><span>, </span><span>自訂迷宮畫布大小</span><span>, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).</span></p>
-<p><span>                                            <img alt="" height="215" src="/images/w16_exam2.png" width="209"/></span></p><h3>w16_exam3</h3>
-<p><span>題目一: 請以</span><span>自己的學號最後四碼</span><span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用 </span><span>pixel=2 的黑色直線</span><span>, </span><span>自訂迷宮畫布大小</span><span>, 直接在頁面畫出下列圖像, 並且</span><span>利用紅色連續線段標示從上方入口, 走至下方出口的路線圖</span><span>.                                                                           <img alt="" height="212" src="/images/w16_exam2.png" width="206"/></span></p><h1>HW 3</h1>
+<p></p><h3>w16_exam2</h3>
+<p><span>題目: 請以</span><span>自己的學號最後四碼</span><span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用 </span><span>pixel=2 的藍色直線</span><span>, </span><span>自訂迷宮畫布大小</span><span>, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).   <strong>-</strong> <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/252c0ab8841aa2c4baa1ff634ce448c7b355ddac/w16-2.py">answer_2</a> <strong>-</strong></span></p>
+<p><span>                                            <img alt="" height="212" src="/images/螢幕擷取畫面 2025-01-04 150654.png" width="212"/></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+
+
+def draw_maze(angle_degrees):
+    # 创建和添加画布
+    canvas = html.CANVAS(width=1200, height=1200)
+    brython_div = doc["brython_div1"]
+    brython_div &lt;= canvas
+
+    # 获取绘图上下文
+    ctx = canvas.getContext("2d")
+
+    # 设置绘图参数
+    pixel_scale = 100
+    offset_x = 32 * 2
+    offset_y = 22 * 2
+    # 整体向右移动的偏移量
+    move_right_offset = 200
+    angle_radians = math.radians(angle_degrees)
+
+    # 定义迷宫线条
+    lines = [
+        ((0, 0), (1, 0)),
+        ((2, 0), (5, 0)),
+        ((5, 0), (5, 5)),
+        ((3, 5), (5, 5)),
+        ((4, 5), (4, 3)),
+        ((2, 3), (4, 3)),
+        ((1, 3), (1, 5)),
+        ((3, 3), (3, 2)),
+        ((0, 0), (0, 5)),
+        ((0, 5), (2, 5)),
+        ((2, 5), (2, 4)),
+        ((2, 4), (3, 4)),
+        ((0, 2), (1, 2)),
+        ((2, 2), (2, 1)),
+        ((0, 1), (4, 1)),
+        ((4, 1), (4, 2)),
+    ]
+
+    # 旋转并绘制迷宫线条
+    ctx.strokeStyle = "blue"
+    ctx.lineWidth = 2
+    for line in lines:
+        start = line[0]
+        end = line[1]
+
+        # 旋转起点坐标
+        start_x_rotated = start[0] * pixel_scale * math.cos(angle_radians) - start[1] * pixel_scale * math.sin(
+            angle_radians)
+        start_y_rotated = start[0] * pixel_scale * math.sin(angle_radians) + start[1] * pixel_scale * math.cos(
+            angle_radians)
+
+        # 旋转终点坐标
+        end_x_rotated = end[0] * pixel_scale * math.cos(angle_radians) - end[1] * pixel_scale * math.sin(
+            angle_radians)
+        end_y_rotated = end[0] * pixel_scale * math.sin(angle_radians) + end[1] * pixel_scale * math.cos(
+            angle_radians)
+
+        ctx.beginPath()
+        ctx.moveTo(
+            offset_x + move_right_offset + start_x_rotated,
+            offset_y + start_y_rotated
+        )
+        ctx.lineTo(
+            offset_x + move_right_offset + end_x_rotated,
+            offset_y + end_y_rotated
+        )
+        ctx.stroke()
+
+    return ctx, offset_x + move_right_offset, offset_y
+
+
+def label_coordinate(ctx, offset_x, offset_y, text_angle_degrees):
+    text_angle_radians = math.radians(text_angle_degrees)
+    ctx.font = "18px Arial"
+    ctx.fillStyle = "red"
+    # 原始文本位置
+    original_x = offset_x + 10
+    original_y = offset_y - 15
+    # 旋转后的文本位置
+    rotated_x = original_x * math.cos(text_angle_radians) - original_y * math.sin(text_angle_radians)
+    rotated_y = original_x * math.sin(text_angle_radians) + original_y * math.cos(text_angle_radians)
+    ctx.save()
+    ctx.translate(offset_x, offset_y)
+    ctx.rotate(text_angle_radians)
+    ctx.fillText("(32, 22)", 10, - 15)
+    ctx.restore()
+
+
+if __name__ == "__main__":
+    # 调整迷宫角度，这里设置为30度，可以根据需要修改
+    maze_angle = 0
+    # 文本角度
+    text_angle = 0
+    ctx, offset_x, offset_y = draw_maze(maze_angle)
+    label_coordinate(ctx, offset_x, offset_y, text_angle)</pre>
+<p><span><br/><br/></span></p><h3>w16_exam3</h3>
+<p><span>題目一: 請以</span><span>自己的學號最後四碼</span><span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用 </span><span>pixel=2 的黑色直線</span><span>, </span><span>自訂迷宮畫布大小</span><span>, 直接在頁面畫出下列圖像, 並且</span><span>利用紅色連續線段標示從上方入口, 走至下方出口的路線圖</span><span>.   <strong>-</strong> <a href="https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/252c0ab8841aa2c4baa1ff634ce448c7b355ddac/w16-3.py">answer_3</a> <strong>-</strong>                                                 <img alt="" height="190" src="/images/螢幕擷取畫面 2025-01-04 151206.png" width="187"/></span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
+from browser import document as doc
+import math
+ 
+ 
+def draw_maze(angle_degrees):
+    # 创建和添加画布
+    canvas = html.CANVAS(width=1200, height=1200)
+    brython_div = doc["brython_div1"]
+    brython_div &lt;= canvas
+ 
+    # 获取绘图上下文
+    ctx = canvas.getContext("2d")
+ 
+    # 设置绘图参数
+    pixel_scale = 100
+    offset_x = 32 * 2
+    offset_y = 22 * 2
+    # 整体向右移动的偏移量
+    move_right_offset = 200
+    angle_radians = math.radians(angle_degrees)
+ 
+    # 定义迷宫线条
+    lines = [
+        ((0, 0), (1, 0)),
+        ((2, 0), (5, 0)),
+        ((5, 0), (5, 5)),
+        ((3, 5), (5, 5)),
+        ((4, 5), (4, 3)),
+        ((2, 3), (4, 3)),
+        ((1, 3), (1, 5)),
+        ((3, 3), (3, 2)),
+        ((0, 0), (0, 5)),
+        ((0, 5), (2, 5)),
+        ((2, 5), (2, 4)),
+        ((2, 4), (3, 4)),
+        ((0, 2), (1, 2)),
+        ((2, 2), (2, 1)),
+        ((0, 1), (4, 1)),
+        ((4, 1), (4, 2)),
+    ]
+ 
+    # 旋转并绘制迷宫线条
+    ctx.strokeStyle = "blue"
+    ctx.lineWidth = 2
+    for line in lines:
+        start = line[0]
+        end = line[1]
+ 
+        # 旋转起点坐标
+        start_x_rotated = start[0] * pixel_scale * math.cos(angle_radians) - start[1] * pixel_scale * math.sin(
+            angle_radians)
+        start_y_rotated = start[0] * pixel_scale * math.sin(angle_radians) + start[1] * pixel_scale * math.cos(
+            angle_radians)
+ 
+        # 旋转终点坐标
+        end_x_rotated = end[0] * pixel_scale * math.cos(angle_radians) - end[1] * pixel_scale * math.sin(
+            angle_radians)
+        end_y_rotated = end[0] * pixel_scale * math.sin(angle_radians) + end[1] * pixel_scale * math.cos(
+            angle_radians)
+ 
+        ctx.beginPath()
+        ctx.moveTo(
+            offset_x + move_right_offset + start_x_rotated,
+            offset_y + start_y_rotated
+        )
+        ctx.lineTo(
+            offset_x + move_right_offset + end_x_rotated,
+            offset_y + end_y_rotated
+        )
+        ctx.stroke()
+ 
+    return ctx, offset_x + move_right_offset, offset_y, pixel_scale
+ 
+ 
+def find_path():
+    # 简单的路径示例，这里假设的路径，实际需要更复杂的算法
+    # 为了维持原本迷宫路线，这里路径假设不破坏迷宫已有路线
+    path = [
+        ((1.5, 0), (1.5, 0.5)),
+        ((1.5, 0.5), (4.5, 0.5)),
+        ((4.5, 0.5), (4.5, 2.5)),
+        ((4.5, 2.5), (3.5, 2.5)),
+        ((3.5, 2.5), (3.5, 1.5)),
+        ((3.5, 1.5), (2.5, 1.5)),
+        ((2.5, 1.5), (2.5, 2.5)),
+        ((2.5, 2.5), (1.5, 2.5)),
+        ((1.5, 2.5), (1.5, 3.5)),
+        ((1.5, 3.5), (3.5, 3.5)),
+        ((3.5, 3.5), (3.5, 4.5)),
+        ((3.5, 4.5), (2.5, 4.5)),
+        ((2.5, 4.5), (2.5, 5))
+    ]
+    return path
+ 
+ 
+def draw_path(ctx, offset_x, offset_y, angle_degrees, path, pixel_scale):
+    angle_radians = math.radians(angle_degrees)
+    ctx.strokeStyle = "red"
+    ctx.lineWidth = 2
+    for line in path:
+        start = line[0]
+        end = line[1]
+ 
+        # 旋转起点坐标
+        start_x_rotated = start[0] * pixel_scale * math.cos(angle_radians) - start[1] * pixel_scale * math.sin(
+            angle_radians)
+        start_y_rotated = start[0] * pixel_scale * math.sin(angle_radians) + start[1] * pixel_scale * math.cos(
+            angle_radians)
+ 
+        # 旋转终点坐标
+        end_x_rotated = end[0] * pixel_scale * math.cos(angle_radians) - end[1] * pixel_scale * math.sin(
+            angle_radians)
+        end_y_rotated = end[0] * pixel_scale * math.sin(angle_radians) + end[1] * pixel_scale * math.cos(
+            angle_radians)
+ 
+        ctx.beginPath()
+        ctx.moveTo(
+            offset_x + start_x_rotated,
+            offset_y + start_y_rotated
+        )
+        ctx.lineTo(
+            offset_x + end_x_rotated,
+            offset_y + end_y_rotated
+        )
+        ctx.stroke()
+ 
+ 
+def label_coordinate(ctx, offset_x, offset_y, text_angle_degrees):
+    text_angle_radians = math.radians(text_angle_degrees)
+    ctx.font = "18px Arial"
+    ctx.fillStyle = "red"
+    # 原始文本位置
+    original_x = offset_x + 10
+    original_y = offset_y - 15
+    # 旋转后的文本位置
+    rotated_x = original_x * math.cos(text_angle_radians) - original_y * math.sin(text_angle_radians)
+    rotated_y = original_x * math.sin(text_angle_radians) + original_y * math.cos(text_angle_radians)
+    ctx.save()
+    ctx.translate(offset_x, offset_y)
+    ctx.rotate(text_angle_radians)
+    ctx.fillText("(32, 22)", 10, - 15)
+    ctx.restore()
+ 
+ 
+if __name__ == "__main__":
+    # 调整迷宫角度，这里设置为30度，可以根据需要修改
+    maze_angle = 0
+    # 文本角度
+    text_angle = 0
+    ctx, offset_x, offset_y, pixel_scale = draw_maze(maze_angle)
+    path = find_path()
+    draw_path(ctx, offset_x, offset_y, maze_angle, path, pixel_scale)
+    label_coordinate(ctx, offset_x, offset_y, text_angle)</pre>
+<p></p><h1>HW 3</h1>
 <h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
 <p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
 <p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
