@@ -611,23 +611,68 @@ draw_rectangle(398, 113, 75, 75, "gold")
 draw_rectangle(480, 135, 90, 30, "Indigo")
 </pre>
 <p></p>
+<h1>HW 3</h1>
+<h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
+<p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
+<p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
+<p></p>
+<h2>HW 3 Exam</h2>
+<p>每六人為一組進行協同程式練習</p>
+<p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
+<h3>w7</h3>
+<pre>今天(10/9)的金字塔指令如下<br/><br/><a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/4a7a3582e38353bdc2ae54512c8ea8d602a8b474/w7.py">十層金字塔</a></pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 設定金字塔的高度
+height = 10
+
+# 迴圈生成金字塔
+for i in range(height):
+    # 每層的空格數量
+    spaces = '　' * (height - i - 1)
+    # 每層的星號數量
+    stars = '＊' * (2 * i + 1)
+    # 輸出每層
+    print(spaces + stars)</pre>
+<pre></pre>
+<h3>w8</h3>
+<p><img alt="" height="426" src="/images/螢幕擷取畫面 2024-10-16 121917.png" width="800"/></p>
+<div class="container">
+<section><form onsubmit="return save_data(this)">
+<div class="mce-tinymce mce-container mce-panel" hidefocus="1" id="mceu_24" role="application" tabindex="-1">
+<div class="mce-container-body mce-stack-layout" id="mceu_24-body">
+<div class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" id="mceu_46" role="group" tabindex="-1">
+<div class="mce-path mce-flow-layout-item mce-first" id="mceu_47">
+<div aria-level="0" class="mce-path-item mce-last" data-index="0" role="button" tabindex="-1">
+<p>操作步驟:</p>
+<ol>
+<li>下載 <a href="http://229.cycu.org/python_2025_lite.7z">python_2025_lite.7z</a> (可攜程式環境)</li>
+<li>下載<span> </span><a href="https://mde.tw/cp2024/downloads/zmq_remote_api_ex_cube_triangle.7z">zmq_remote_api_ex_cube_triangle.7z</a> (利用 Python 控制模擬場景中的物件)</li>
+<li>進入可攜程式環境中 data/CoppeliaSim 目錄, 開啟 coppeliaSim.exe (機電整合模擬程式,<span> </span><a href="https://github.com/CoppeliaRobotics">原始碼</a>)</li>
+<li>啟動可攜程式環境, 雙點擊 start_ipv6.bat, 系統會啟動四個命令列, 兩個 SciTE 編輯器</li>
+<li>執行場景控制程式前, 先處理操作系統的防火牆, 將下列指令存為 .bat 檔案後, 以管理員身分執行, 以便開啟 23000-23050 埠號進出:</li>
+<li>netsh advfirewall firewall add rule name="allow_23000-23050" dir=in action=allow protocol=TCP localport=23000-23050<br/>netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allow protocol=TCP localport=23000-23050</li>
+<li>開啟 CoppeliaSim 中的視覺串流伺服器: Modules - Connectivity - Visualization stream</li>
+<li>利用 SciTE 開啟 put_cubes_into_scene_1.py, 利用 Tools - Go 執行操控程式</li>
+<li>使用者可以透過瀏覽器, 以模擬場景所在電腦的 IP, 且埠號為 23020 觀看模擬場景</li>
+</ol>
+</div>
+</div>
 <h3>w16_exam2</h3>
-<p><span>題目: 請以</span><span>自己的學號最後四碼</span><span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用 </span><span>pixel=2 的藍色直線</span><span>, </span><span>自訂迷宮畫布大小</span><span>, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).   <strong>-</strong> <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/252c0ab8841aa2c4baa1ff634ce448c7b355ddac/w16-2.py">answer_2</a> <strong>-</strong></span></p>
-<p><span>                                            <img alt="" height="212" src="/images/螢幕擷取畫面 2025-01-04 150654.png" width="212"/></span></p>
+<p><span>題目: 請以</span><span>自己的學號最後四碼</span><span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用 </span><span>pixel=2 的藍色直線</span><span>, </span><span>自訂迷宮畫布大小</span><span>, 直接在頁面畫出下列圖像, 繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).  <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/12dc10e464b57451ab287af55e1d6c0b69445331/w16_exam2.py">answer</a></span></p>
+<p><span>                                              <img alt="" height="201" src="/images/螢幕擷取畫面 2025-01-04 150654.png" width="200"/></span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
 from browser import document as doc
 import math
-
-
+ 
+ 
 def draw_maze(angle_degrees):
     # 创建和添加画布
     canvas = html.CANVAS(width=1200, height=1200)
     brython_div = doc["brython_div1"]
     brython_div &lt;= canvas
-
+ 
     # 获取绘图上下文
     ctx = canvas.getContext("2d")
-
+ 
     # 设置绘图参数
     pixel_scale = 100
     offset_x = 32 * 2
@@ -635,7 +680,7 @@ def draw_maze(angle_degrees):
     # 整体向右移动的偏移量
     move_right_offset = 200
     angle_radians = math.radians(angle_degrees)
-
+ 
     # 定义迷宫线条
     lines = [
         ((0, 0), (1, 0)),
@@ -655,26 +700,26 @@ def draw_maze(angle_degrees):
         ((0, 1), (4, 1)),
         ((4, 1), (4, 2)),
     ]
-
+ 
     # 旋转并绘制迷宫线条
     ctx.strokeStyle = "blue"
     ctx.lineWidth = 2
     for line in lines:
         start = line[0]
         end = line[1]
-
+ 
         # 旋转起点坐标
         start_x_rotated = start[0] * pixel_scale * math.cos(angle_radians) - start[1] * pixel_scale * math.sin(
             angle_radians)
         start_y_rotated = start[0] * pixel_scale * math.sin(angle_radians) + start[1] * pixel_scale * math.cos(
             angle_radians)
-
+ 
         # 旋转终点坐标
         end_x_rotated = end[0] * pixel_scale * math.cos(angle_radians) - end[1] * pixel_scale * math.sin(
             angle_radians)
         end_y_rotated = end[0] * pixel_scale * math.sin(angle_radians) + end[1] * pixel_scale * math.cos(
             angle_radians)
-
+ 
         ctx.beginPath()
         ctx.moveTo(
             offset_x + move_right_offset + start_x_rotated,
@@ -685,10 +730,10 @@ def draw_maze(angle_degrees):
             offset_y + end_y_rotated
         )
         ctx.stroke()
-
+ 
     return ctx, offset_x + move_right_offset, offset_y
-
-
+ 
+ 
 def label_coordinate(ctx, offset_x, offset_y, text_angle_degrees):
     text_angle_radians = math.radians(text_angle_degrees)
     ctx.font = "18px Arial"
@@ -704,8 +749,8 @@ def label_coordinate(ctx, offset_x, offset_y, text_angle_degrees):
     ctx.rotate(text_angle_radians)
     ctx.fillText("(32, 22)", 10, - 15)
     ctx.restore()
-
-
+ 
+ 
 if __name__ == "__main__":
     # 调整迷宫角度，这里设置为30度，可以根据需要修改
     maze_angle = 0
@@ -713,9 +758,21 @@ if __name__ == "__main__":
     text_angle = 0
     ctx, offset_x, offset_y = draw_maze(maze_angle)
     label_coordinate(ctx, offset_x, offset_y, text_angle)</pre>
-<p><span><br/><br/></span></p>
+<p></p><h1>HW 4</h1>
+<h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
+<p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
+<p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
+<p style="padding-left: 30px;">利用 <a href="https://manual.coppeliarobotics.com/en/zmqRemoteApiOverview.htm">Python</a> 跨網路控制瀏覽器上的機電模擬系統</p>
+<p style="padding-left: 30px;">範例:</p>
+<p style="padding-left: 60px;"><a href="/downloads/cd2023_pj3ag4_zmq_football_4.7.7z">cd2023_pj3ag4_zmq_football_4.7.7z</a></p>
+<p style="padding-left: 60px;"><a href="https://localhost:9446/downloads/cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z">cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z</a></p>
+<p>完成上述流程整理後, 請將 HW4 自評分數輸入 cp2024 自評表單中.</p>
+<h2>HW 4 Exam</h2>
+<p>每六人為一組進行協同程式練習</p>
+<p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
 <h3>w16_exam3</h3>
-<p><span>題目一: 請以</span><span>自己的學號最後四碼</span><span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用 </span><span>pixel=2 的黑色直線</span><span>, </span><span>自訂迷宮畫布大小</span><span>, 直接在頁面畫出下列圖像, 並且</span><span>利用紅色連續線段標示從上方入口, 走至下方出口的路線圖</span><span>.   <strong>-</strong> <a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/11e34bf6afc43942f26e224cb9ffcc8fa9ce951b/w16-3.py">answer_3</a> <strong>-</strong>                                                 <img alt="" height="183" src="/images/螢幕擷取畫面 2025-01-05 202628.png" width="177"/></span></p>
+<p>題目: 請以<span>自己的學號最後四碼</span>作為下列繪圖的左上方點座標, (例如: 若學號最後四碼為 3932, 請將 (39, 32) 作為繪圖左上方點座標), 並以紅色文字標示出該點座標 (例如: (39, 32)), 之後請利用<span> </span><span>pixel=2 的黑色直線</span>,<span> </span><span>自訂迷宮畫布大小</span>, 直接在頁面畫出下列圖像, 並且<span>利用紅色連續線段標示從上方入口, 走至下方出口的路線圖</span>.繪圖程式除了必須直接列在頁面 html 檔案外, 也請存入自己的 Gist 區域, 並在所完成的圖像下方, 以自選標題的 anchor 連結至 Gist, 讓使用者點擊該連結後, 可以在各自的 Brython 頁面中繪出下列圖像).   answer</p>
+<p>                                              <img alt="" height="207" src="/images/螢幕擷取畫面 2025-01-05 202628.png" width="200"/></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">from browser import html
 from browser import document as doc
 import math
@@ -870,79 +927,7 @@ if __name__ == "__main__":
     path = find_path()
     draw_path(ctx, offset_x, offset_y, maze_angle, path, pixel_scale)
     label_coordinate(ctx, offset_x, offset_y, text_angle)</pre>
-<p><span></span></p>
-<h1>HW 3</h1>
-<h4>主題: Python 的數字、演算法與迴圈 (20%)</h4>
-<p style="padding-left: 30px;">Python 課程教材: <a href="https://www.learnpythonwithjupyter.com/">https://www.learnpythonwithjupyter.com/</a> - PART 4 and Part 5</p>
-<p>完成上述流程整理後, 請將 HW3 自評分數輸入 cp2024 自評表單中.</p>
-<p></p>
-<h2>HW 3 Exam</h2>
-<p>每六人為一組進行協同程式練習</p>
-<p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 3 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h3>w7</h3>
-<pre>今天(10/9)的金字塔指令如下<br/><br/><a href="https://mdecp2024.github.io/hw-41323222/content/Brython.html?src=https://gist.githubusercontent.com/41323222/e74f12d6600ece66bee8885f8bba5dd6/raw/4a7a3582e38353bdc2ae54512c8ea8d602a8b474/w7.py">十層金字塔</a></pre>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"># 設定金字塔的高度
-height = 10
-
-# 迴圈生成金字塔
-for i in range(height):
-    # 每層的空格數量
-    spaces = '　' * (height - i - 1)
-    # 每層的星號數量
-    stars = '＊' * (2 * i + 1)
-    # 輸出每層
-    print(spaces + stars)</pre>
-<pre></pre>
-<h3>w8</h3>
-<p><img alt="" height="426" src="/images/螢幕擷取畫面 2024-10-16 121917.png" width="800"/></p>
-<div class="container">
-<section><form onsubmit="return save_data(this)">
-<div class="mce-tinymce mce-container mce-panel" hidefocus="1" id="mceu_24" role="application" tabindex="-1">
-<div class="mce-container-body mce-stack-layout" id="mceu_24-body">
-<div class="mce-statusbar mce-container mce-panel mce-stack-layout-item mce-last" hidefocus="1" id="mceu_46" role="group" tabindex="-1">
-<div class="mce-container-body mce-flow-layout" id="mceu_46-body">
-<div class="mce-path mce-flow-layout-item mce-first" id="mceu_47">
-<div aria-level="0" class="mce-path-item mce-last" data-index="0" role="button" tabindex="-1">
-<p>操作步驟:</p>
-<ol>
-<li>下載 <a href="http://229.cycu.org/python_2025_lite.7z">python_2025_lite.7z</a> (可攜程式環境)</li>
-<li>下載<span> </span><a href="https://mde.tw/cp2024/downloads/zmq_remote_api_ex_cube_triangle.7z">zmq_remote_api_ex_cube_triangle.7z</a> (利用 Python 控制模擬場景中的物件)</li>
-<li>進入可攜程式環境中 data/CoppeliaSim 目錄, 開啟 coppeliaSim.exe (機電整合模擬程式,<span> </span><a href="https://github.com/CoppeliaRobotics">原始碼</a>)</li>
-<li>啟動可攜程式環境, 雙點擊 start_ipv6.bat, 系統會啟動四個命令列, 兩個 SciTE 編輯器</li>
-<li>執行場景控制程式前, 先處理操作系統的防火牆, 將下列指令存為 .bat 檔案後, 以管理員身分執行, 以便開啟 23000-23050 埠號進出:</li>
-<li>netsh advfirewall firewall add rule name="allow_23000-23050" dir=in action=allow protocol=TCP localport=23000-23050<br/>netsh advfirewall firewall add rule name="allow_23000-23050" dir=out action=allow protocol=TCP localport=23000-23050</li>
-<li>開啟 CoppeliaSim 中的視覺串流伺服器: Modules - Connectivity - Visualization stream</li>
-<li>利用 SciTE 開啟 put_cubes_into_scene_1.py, 利用 Tools - Go 執行操控程式</li>
-<li>使用者可以透過瀏覽器, 以模擬場景所在電腦的 IP, 且埠號為 23020 觀看模擬場景</li>
-</ol>
-</div>
-</div>
-<br/>
-<div class="mce-flow-layout-item mce-resizehandle mce-last" id="mceu_48"><i class="mce-ico mce-i-resize"></i></div>
-</div>
-</div>
-</div>
-</div>
-<input onclick="ssave()" type="button" value="save"/><input onclick="cssave()" type="button" value="csave"/><span> </span><input onclick="location.href='/get_page/W8'" type="button" value="viewpage"/></form></section>
-</div>
-<div aria-describedby="mceu_68-none" aria-labelledby="mceu_68" class="mce-contextmenu mce-container mce-panel mce-floatpanel mce-menu mce-menu-has-icons mce-menu-align" hidefocus="1" id="mceu_68" role="application" tabindex="-1">
-<div class="mce-container-body mce-stack-layout" id="mceu_68-body" role="menu">
-<div class="mce-menu-item mce-menu-item-normal mce-stack-layout-item mce-first" id="mceu_69" role="menuitem" tabindex="-1"></div>
-</div>
-</div>
-<h1>HW 4</h1>
-<h4>主題: 利用 Python 控制機電模擬系統 (20%)</h4>
-<p style="padding-left: 30px;">利用 <a href="https://solvespace.com/">https://solvespace.com/</a> 建立機械系統零組件</p>
-<p style="padding-left: 30px;">利用 <a href="https://www.coppeliarobotics.com/">CoppeliaSim</a> 建立機電模擬系統</p>
-<p style="padding-left: 30px;">利用 <a href="https://manual.coppeliarobotics.com/en/zmqRemoteApiOverview.htm">Python</a> 跨網路控制瀏覽器上的機電模擬系統</p>
-<p style="padding-left: 30px;">範例:</p>
-<p style="padding-left: 60px;"><a href="/downloads/cd2023_pj3ag4_zmq_football_4.7.7z">cd2023_pj3ag4_zmq_football_4.7.7z</a></p>
-<p style="padding-left: 60px;"><a href="https://localhost:9446/downloads/cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z">cd2024_2b_g6_steel_ball_platform_nxopen_copsim.7z</a></p>
-<p>完成上述流程整理後, 請將 HW4 自評分數輸入 cp2024 自評表單中.</p>
-<h2>HW 4 Exam</h2>
-<p>每六人為一組進行協同程式練習</p>
-<p>透過 Jupyterlab 協同網頁, 輪流指定各組編寫 HW 4 相關的程式練習, 以及網頁內容 (localhost 與 Codespaces 環境)編輯.</p>
-<h1>Final Report</h1>
+<p></p><h1>Final Report</h1>
 <p>期末口頭與書面專題報告 (20%)</p>
 <p>期末口頭專題報告影片:</p>
 <p style="padding-left: 30px;">......</p>
@@ -1200,4 +1185,4 @@ doc["threejsblock"].bind("click", threejsblock.do)
 <!-- editor2 結束 --><hr/>
 <p>
 <script src="https://unpkg.com/three@0.144.0/build/three.js" type="text/javascript"></script>
-</p>
+</p></div></div></div></form></section></div>
